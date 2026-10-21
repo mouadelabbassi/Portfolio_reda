@@ -1,0 +1,453 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ME/SIGNAL CV-backed knowledge graph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "sources",
+    "identity",
+    "profile",
+    "clusters",
+    "nodes",
+    "edges",
+    "tour",
+    "placeholders"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "status": {
+      "enum": [
+        "awaiting-sources",
+        "draft",
+        "verified"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "fileName"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "kind": {
+            "const": "cv"
+          },
+          "fileName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{64}$"
+          }
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brand",
+        "referenceUrl",
+        "source"
+      ],
+      "properties": {
+        "brand": {
+          "type": "string"
+        },
+        "referenceUrl": {
+          "type": "string",
+          "format": "uri"
+        },
+        "source": {
+          "const": "user-brief"
+        }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "personNodeId",
+        "name",
+        "headline",
+        "summary",
+        "cvDownloadUrl"
+      ],
+      "properties": {
+        "personNodeId": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "headline": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "summary": {
+          "$ref": "#/$defs/nullableText"
+        },
+        "cvDownloadUrl": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^/(?!/)[^\\\\]*$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "color",
+          "sourceNodeIds"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "type": "string",
+            "pattern": "^#[a-fA-F0-9]{6}$"
+          },
+          "sourceNodeIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/$defs/id"
+            }
+          }
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "source",
+          "target",
+          "type",
+          "weight",
+          "sourceRefs"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "source": {
+            "$ref": "#/$defs/id"
+          },
+          "target": {
+            "$ref": "#/$defs/id"
+          },
+          "type": {
+            "enum": [
+              "USES",
+              "BUILT_WITH",
+              "LEARNED_AT",
+              "PRODUCED",
+              "RELATED_TO"
+            ]
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "sourceRefs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/sourceRef"
+            }
+          }
+        }
+      }
+    },
+    "tour": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "nodeIds"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string"
+          },
+          "nodeIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/$defs/id"
+            }
+          }
+        }
+      }
+    },
+    "placeholders": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "reason"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "nullableText": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceId",
+        "locator",
+        "evidence"
+      ],
+      "properties": {
+        "sourceId": {
+          "$ref": "#/$defs/id"
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "name",
+        "status",
+        "clusterId",
+        "sourceRefs",
+        "details"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "enum": [
+            "Person",
+            "Project",
+            "Skill",
+            "Technology",
+            "Experience",
+            "Education",
+            "Certification",
+            "Contact"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "placeholder",
+            "verified"
+          ]
+        },
+        "clusterId": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sourceRef"
+          }
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "summary": {
+              "$ref": "#/$defs/nullableText"
+            },
+            "organization": {
+              "$ref": "#/$defs/nullableText"
+            },
+            "dateLabel": {
+              "$ref": "#/$defs/nullableText"
+            },
+            "problem": {
+              "$ref": "#/$defs/nullableText"
+            },
+            "role": {
+              "$ref": "#/$defs/nullableText"
+            },
+            "outcome": {
+              "$ref": "#/$defs/nullableText"
+            },
+            "stackNodeIds": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "visualization": {
+              "enum": [
+                "waveform",
+                "can-frames",
+                "power-curve",
+                "sensor-stream",
+                "none"
+              ],
+              "description": "Illustrative UI choice only. Rendered signals must not be represented as measured project data."
+            },
+            "links": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "url",
+                  "sourceRefs"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Application validator allows only https:, mailto: and tel: schemes. The profile CV download is a same-origin root path."
+                  },
+                  "sourceRefs": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/$defs/sourceRef"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "verified"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sourceRefs": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "placeholder"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "name": {
+                "pattern": "^\\[PLACEHOLDER:"
+              },
+              "sourceRefs": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "$id": "https://me-signal.local/graph.schema.json",
+  "description": "All published personal facts must be supported by CV sourceRefs. IDs, references, safe link schemes and factual accuracy additionally require application validation. The placeholders array records optional omissions and editorial limitations; it does not create published factual nodes."
+}

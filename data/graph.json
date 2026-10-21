@@ -1,0 +1,2269 @@
+{
+  "$schema": "./graph.schema.json",
+  "schemaVersion": "1.0.0",
+  "status": "verified",
+  "sources": [
+    {
+      "id": "cv-automobile",
+      "kind": "cv",
+      "fileName": "cv_Rida_Faradi_automobile.pdf",
+      "sha256": "3d6bd00fd53134139bb55ca1bdd2b24148794869f854a8d448f46bd96f41d896"
+    },
+    {
+      "id": "cv-pfe",
+      "kind": "cv",
+      "fileName": "CV_Rida_Faradi_PFE.pdf",
+      "sha256": "edd20065f48cf4844af18039511890cff5dc2fe2e71f04abebc5eec540a7909d"
+    },
+    {
+      "id": "cv-maroc",
+      "kind": "cv",
+      "fileName": "CV_Rida_Faradi_maroc_format.pdf",
+      "sha256": "c5cfeb4963fee6db9ad4dcc2e9ad157b104e93c2fd840e650d2b4f42300fa2bb"
+    }
+  ],
+  "identity": {
+    "brand": "ME/SIGNAL",
+    "referenceUrl": "https://portfolio1.moad-elabbassi.workers.dev",
+    "source": "user-brief"
+  },
+  "profile": {
+    "personNodeId": "person-core",
+    "name": "Rida Faradi",
+    "headline": "Electrical & embedded engineering student",
+    "summary": "Automotive ADAS experience at UTAC Maroc. CAN/LIN analysis, embedded control and electrical diagnostics. Seeking a PFE internship in automotive embedded systems in 2027.",
+    "cvDownloadUrl": "/cv-rida-faradi.pdf"
+  },
+  "clusters": [
+    {
+      "id": "automotive",
+      "name": "Automotive & validation",
+      "color": "#c7f578",
+      "sourceNodeIds": [
+        "experience-utac",
+        "project-ags",
+        "skill-testing",
+        "skill-adas",
+        "skill-can",
+        "skill-lin",
+        "skill-documentation",
+        "tech-canalyzer"
+      ]
+    },
+    {
+      "id": "electrical",
+      "name": "Electrical & power",
+      "color": "#75b3b3",
+      "sourceNodeIds": [
+        "experience-ocp",
+        "project-safetybrain",
+        "skill-pid",
+        "skill-fault-detection",
+        "skill-battery-soh",
+        "tech-matlab",
+        "tech-labview",
+        "tech-proteus"
+      ]
+    },
+    {
+      "id": "embedded",
+      "name": "Embedded & electronics",
+      "color": "#a6c7ad",
+      "sourceNodeIds": [
+        "education-ensa",
+        "project-factory",
+        "skill-acquisition",
+        "tech-arduino",
+        "tech-esp32",
+        "tech-raspberry-pi",
+        "tech-stm32",
+        "tech-pic",
+        "tech-uart",
+        "tech-i2c",
+        "tech-ads1115",
+        "tech-vhdl-fpga",
+        "tech-arduino-ide"
+      ]
+    },
+    {
+      "id": "software",
+      "name": "Software & data",
+      "color": "#83b7a7",
+      "sourceNodeIds": [
+        "project-bms",
+        "tech-c-cpp",
+        "tech-python",
+        "tech-json",
+        "tech-http",
+        "tech-rest",
+        "tech-fastapi",
+        "tech-websocket",
+        "tech-xgboost",
+        "tech-streamlit"
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "person-core",
+      "type": "Person",
+      "name": "Rida Faradi",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header",
+          "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+        },
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Profil",
+          "evidence": "Élève-ingénieur en génie électrique et systèmes embarqués à l’ENSA Khouribga, à la recherche d’un stage PFE en 2027 dans le secteur automobile."
+        },
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "Electrical and embedded engineering student at ENSA Khouribga, with automotive testing experience at UTAC Maroc. Seeking a PFE internship in automotive embedded systems in 2027.",
+        "organization": "ENSA Khouribga",
+        "dateLabel": "Seeking PFE internship · 2027",
+        "role": "Engineering student; degree in progress",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "experience-utac",
+      "type": "Experience",
+      "name": "UTAC Maroc",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "UTAC Maroc — Stage PFA, systèmes embarqués et fonctions ADAS. Juillet–août 2026 | Oued Zem, Maroc."
+        },
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "PFA internship in embedded systems and ADAS functions in Oued Zem, Morocco.",
+        "organization": "UTAC Maroc",
+        "dateLabel": "July–August 2026",
+        "problem": null,
+        "role": "Contributed to automotive test preparation and evaluation of BSD, RVC and DMS functions; visualized and analyzed CAN/LIN communications with CANalyzer.",
+        "outcome": "Structured test analyses and results in standardized technical documentation.",
+        "stackNodeIds": [
+          "skill-testing",
+          "skill-adas",
+          "skill-can",
+          "skill-lin",
+          "tech-canalyzer",
+          "skill-documentation"
+        ],
+        "visualization": "can-frames"
+      }
+    },
+    {
+      "id": "experience-ocp",
+      "type": "Experience",
+      "name": "OCP Group",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-maroc",
+          "locator": "Page 1 / Expérience professionnelle / OCP Group",
+          "evidence": "Stage d’initiation - Systèmes électriques et réseaux industriels | Juillet - août 2025. OCP Group - Site industriel de Khouribga. Découvert l’environnement industriel haute tension : organisation et fonctionnement d’un poste électrique HT/MT. Étudié le schéma unifilaire du poste."
+        }
+      ],
+      "details": {
+        "summary": "Introductory internship in electrical systems and industrial networks at the Khouribga industrial site.",
+        "organization": "OCP Group",
+        "dateLabel": "July–August 2025",
+        "problem": null,
+        "role": "Observed the organization and operation of an HV/MV electrical substation and studied its single-line diagram.",
+        "outcome": null,
+        "visualization": "waveform"
+      }
+    },
+    {
+      "id": "education-ensa",
+      "type": "Education",
+      "name": "ENSA Khouribga",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Formation",
+          "evidence": "Diplôme d’ingénieur d’État en génie électrique — systèmes embarqués. 2022–en cours. École Nationale des Sciences Appliquées de Khouribga (ENSA Khouribga), Maroc."
+        }
+      ],
+      "details": {
+        "summary": "State engineering degree in electrical engineering, specializing in embedded systems. Degree in progress.",
+        "organization": "École Nationale des Sciences Appliquées de Khouribga",
+        "dateLabel": "2022–present",
+        "role": "Engineering student",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "project-ags",
+      "type": "Project",
+      "name": "Calandre active (AGS)",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ],
+      "details": {
+        "summary": "Automotive mechatronic control for active grille shutters.",
+        "dateLabel": null,
+        "problem": "Control grille shutters according to temperature and speed.",
+        "role": "Developed PID control, linked Arduino and ESP32 controllers through UART/JSON, and contributed to real-time web supervision.",
+        "outcome": null,
+        "stackNodeIds": [
+          "tech-arduino",
+          "tech-esp32",
+          "skill-pid",
+          "tech-uart",
+          "tech-json",
+          "tech-http"
+        ],
+        "visualization": "sensor-stream"
+      }
+    },
+    {
+      "id": "project-bms",
+      "type": "Project",
+      "name": "BMS · Battery SOH prediction",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ],
+      "details": {
+        "summary": "Prediction of lithium-ion battery state of health with XGBoost and an interactive Streamlit interface.",
+        "dateLabel": null,
+        "problem": "Predict and visualize the state of health of lithium-ion batteries.",
+        "role": "Developed the XGBoost prediction model and Streamlit results interface.",
+        "outcome": null,
+        "stackNodeIds": [
+          "tech-python",
+          "tech-xgboost",
+          "tech-streamlit",
+          "skill-battery-soh"
+        ],
+        "visualization": "power-curve"
+      }
+    },
+    {
+      "id": "project-safetybrain",
+      "type": "Project",
+      "name": "SAFETYBRAIN STATION",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        },
+        {
+          "sourceId": "cv-pfe",
+          "locator": "Page 1 / Projets techniques / SAFETYBRAIN STATION",
+          "evidence": "Conception d’une architecture distribuée maître/esclave et d’algorithmes de détection de défauts en temps réel. Développement d’échanges UART par trames JSON et d’un serveur Web embarqué avec API REST pour la supervision à distance."
+        }
+      ],
+      "details": {
+        "summary": "Distributed electrical fault detection and remote supervision for a three-phase network.",
+        "dateLabel": null,
+        "problem": "Detect faults on a three-phase electrical network and supervise the system remotely.",
+        "role": "Designed the distributed master/slave architecture and fault-detection algorithms; developed acquisition, UART/JSON exchanges and an embedded REST web server.",
+        "outcome": null,
+        "stackNodeIds": [
+          "tech-esp32",
+          "tech-arduino",
+          "tech-uart",
+          "tech-json",
+          "tech-rest",
+          "skill-fault-detection",
+          "skill-acquisition"
+        ],
+        "visualization": "waveform"
+      }
+    },
+    {
+      "id": "project-factory",
+      "type": "Project",
+      "name": "Mini-usine intelligente",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ],
+      "details": {
+        "summary": "Team project in measurement acquisition, actuator control, alerts and real-time supervision.",
+        "dateLabel": "2025–2026",
+        "problem": "Acquire sensor measurements and supervise the system in real time.",
+        "role": "Contributed to acquisition, actuator control and alerts; integrated ADS1115 over I2C and participated in the web dashboard.",
+        "outcome": null,
+        "stackNodeIds": [
+          "tech-raspberry-pi",
+          "tech-python",
+          "tech-fastapi",
+          "tech-websocket",
+          "tech-i2c",
+          "tech-ads1115",
+          "skill-acquisition"
+        ],
+        "visualization": "sensor-stream"
+      }
+    },
+    {
+      "id": "contact-email",
+      "type": "Contact",
+      "name": "Email",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header",
+          "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+        }
+      ],
+      "details": {
+        "summary": "faradirida1@gmail.com",
+        "links": [
+          {
+            "label": "faradirida1@gmail.com",
+            "url": "mailto:faradirida1@gmail.com",
+            "sourceRefs": [
+              {
+                "sourceId": "cv-automobile",
+                "locator": "Page 1 / Header",
+                "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+              }
+            ]
+          }
+        ],
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "contact-linkedin",
+      "type": "Contact",
+      "name": "LinkedIn",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header / LinkedIn PDF hyperlink annotation",
+          "evidence": "The LinkedIn annotation URI is https://www.linkedin.com/in/rida-faradi-a66383304/."
+        }
+      ],
+      "details": {
+        "summary": "Rida Faradi",
+        "links": [
+          {
+            "label": "Rida Faradi",
+            "url": "https://www.linkedin.com/in/rida-faradi-a66383304/",
+            "sourceRefs": [
+              {
+                "sourceId": "cv-automobile",
+                "locator": "Page 1 / Header / LinkedIn PDF hyperlink annotation",
+                "evidence": "The LinkedIn annotation URI is https://www.linkedin.com/in/rida-faradi-a66383304/."
+              }
+            ]
+          }
+        ],
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "contact-phone",
+      "type": "Contact",
+      "name": "Phone",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header",
+          "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+        }
+      ],
+      "details": {
+        "summary": "+212 649 781 159",
+        "links": [
+          {
+            "label": "+212 649 781 159",
+            "url": "tel:+212649781159",
+            "sourceRefs": [
+              {
+                "sourceId": "cv-automobile",
+                "locator": "Page 1 / Header",
+                "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+              }
+            ]
+          }
+        ],
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-testing",
+      "type": "Skill",
+      "name": "Automotive test preparation",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "Participation in automotive test preparation at UTAC Maroc.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-adas",
+      "type": "Skill",
+      "name": "ADAS · BSD / RVC / DMS",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "Participation in the evaluation of BSD, RVC and DMS functions.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-can",
+      "type": "Skill",
+      "name": "CAN",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "Visualized and analyzed CAN communications with CANalyzer during the UTAC internship.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-lin",
+      "type": "Skill",
+      "name": "LIN",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "Visualized and analyzed LIN communications with CANalyzer during the UTAC internship.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-pid",
+      "type": "Skill",
+      "name": "PID control",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ],
+      "details": {
+        "summary": "Developed PID control for active grille shutters according to temperature and speed.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-acquisition",
+      "type": "Skill",
+      "name": "Data acquisition",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ],
+      "details": {
+        "summary": "Measurement acquisition and ADS1115 integration over I2C in the mini-factory team project.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-fault-detection",
+      "type": "Skill",
+      "name": "Electrical fault detection",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ],
+      "details": {
+        "summary": "Distributed fault detection on a three-phase network in SAFETYBRAIN STATION.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-documentation",
+      "type": "Skill",
+      "name": "Technical documentation",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "Structured automotive test analyses and results in standardized technical documentation.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-battery-soh",
+      "type": "Skill",
+      "name": "Battery SOH prediction",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ],
+      "details": {
+        "summary": "Developed a model to predict lithium-ion battery state of health.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-canalyzer",
+      "type": "Technology",
+      "name": "CANalyzer",
+      "status": "verified",
+      "clusterId": "automotive",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ],
+      "details": {
+        "summary": "CANalyzer is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-c-cpp",
+      "type": "Technology",
+      "name": "C/C++",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Programmation",
+          "evidence": "C/C++, Python, Arduino IDE."
+        }
+      ],
+      "details": {
+        "summary": "C/C++ is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-python",
+      "type": "Technology",
+      "name": "Python",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Programmation",
+          "evidence": "C/C++, Python, Arduino IDE."
+        }
+      ],
+      "details": {
+        "summary": "Python is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-arduino",
+      "type": "Technology",
+      "name": "Arduino",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ],
+      "details": {
+        "summary": "Arduino is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-esp32",
+      "type": "Technology",
+      "name": "ESP32",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ],
+      "details": {
+        "summary": "ESP32 is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-raspberry-pi",
+      "type": "Technology",
+      "name": "Raspberry Pi 4",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ],
+      "details": {
+        "summary": "Raspberry Pi 4 is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-stm32",
+      "type": "Technology",
+      "name": "STM32",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ],
+      "details": {
+        "summary": "STM32 is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-pic",
+      "type": "Technology",
+      "name": "PIC",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ],
+      "details": {
+        "summary": "PIC is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-uart",
+      "type": "Technology",
+      "name": "UART",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ],
+      "details": {
+        "summary": "UART is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-i2c",
+      "type": "Technology",
+      "name": "I2C",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ],
+      "details": {
+        "summary": "I2C is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-json",
+      "type": "Technology",
+      "name": "JSON",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ],
+      "details": {
+        "summary": "JSON is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-http",
+      "type": "Technology",
+      "name": "HTTP",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ],
+      "details": {
+        "summary": "HTTP is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-rest",
+      "type": "Technology",
+      "name": "REST API",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ],
+      "details": {
+        "summary": "REST API is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-fastapi",
+      "type": "Technology",
+      "name": "FastAPI",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ],
+      "details": {
+        "summary": "FastAPI is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-websocket",
+      "type": "Technology",
+      "name": "WebSocket",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ],
+      "details": {
+        "summary": "WebSocket is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-ads1115",
+      "type": "Technology",
+      "name": "ADS1115",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ],
+      "details": {
+        "summary": "ADS1115 is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-xgboost",
+      "type": "Technology",
+      "name": "XGBoost",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ],
+      "details": {
+        "summary": "XGBoost is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-streamlit",
+      "type": "Technology",
+      "name": "Streamlit",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ],
+      "details": {
+        "summary": "Streamlit is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-matlab",
+      "type": "Technology",
+      "name": "MATLAB",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ],
+      "details": {
+        "summary": "MATLAB is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-labview",
+      "type": "Technology",
+      "name": "LabVIEW",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ],
+      "details": {
+        "summary": "LabVIEW is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-proteus",
+      "type": "Technology",
+      "name": "Proteus",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ],
+      "details": {
+        "summary": "Proteus is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-vhdl-fpga",
+      "type": "Technology",
+      "name": "VHDL / FPGA",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ],
+      "details": {
+        "summary": "VHDL / FPGA is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-arduino-ide",
+      "type": "Technology",
+      "name": "Arduino IDE",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Programmation",
+          "evidence": "C/C++, Python, Arduino IDE."
+        }
+      ],
+      "details": {
+        "summary": "Arduino IDE is listed in the CV’s technical skills or project stack.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "experience-electrodays",
+      "type": "Experience",
+      "name": "ElectroDays 9.0",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Activités",
+          "evidence": "Vice-président de l’événement ElectroDays 9.0 (2025–2026)."
+        }
+      ],
+      "details": {
+        "summary": "Vice-president of the ElectroDays 9.0 event.",
+        "organization": "ElectroDays 9.0",
+        "dateLabel": "2025–2026",
+        "role": "Event vice-president",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "experience-sport",
+      "type": "Experience",
+      "name": "ENSA Club Sportif",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Activités",
+          "evidence": "Responsable logistique et déplacements, ENSA Club Sportif (septembre 2024–juin 2025)."
+        }
+      ],
+      "details": {
+        "summary": "Responsible for logistics and travel.",
+        "organization": "ENSA Club Sportif",
+        "dateLabel": "September 2024–June 2025",
+        "role": "Logistics and travel",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-arabic",
+      "type": "Skill",
+      "name": "Arabic",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Langues",
+          "evidence": "Arabe (langue maternelle), français (courant), anglais (courant)."
+        }
+      ],
+      "details": {
+        "summary": "Native language.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-french",
+      "type": "Skill",
+      "name": "French",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Langues",
+          "evidence": "Arabe (langue maternelle), français (courant), anglais (courant)."
+        }
+      ],
+      "details": {
+        "summary": "Fluent, as stated in the CV.",
+        "visualization": "none"
+      }
+    },
+    {
+      "id": "skill-english",
+      "type": "Skill",
+      "name": "English",
+      "status": "verified",
+      "clusterId": null,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Langues",
+          "evidence": "Arabe (langue maternelle), français (courant), anglais (courant)."
+        }
+      ],
+      "details": {
+        "summary": "Fluent, as stated in the CV.",
+        "visualization": "none"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "person-core-related-to-experience-utac",
+      "source": "person-core",
+      "target": "experience-utac",
+      "type": "RELATED_TO",
+      "weight": 1,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "UTAC Maroc — Stage PFA, systèmes embarqués et fonctions ADAS. Juillet–août 2026 | Oued Zem, Maroc."
+        }
+      ]
+    },
+    {
+      "id": "person-core-related-to-experience-ocp",
+      "source": "person-core",
+      "target": "experience-ocp",
+      "type": "RELATED_TO",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-maroc",
+          "locator": "Page 1 / Expérience professionnelle / OCP Group",
+          "evidence": "Stage d’initiation - Systèmes électriques et réseaux industriels | Juillet - août 2025. OCP Group - Site industriel de Khouribga. Découvert l’environnement industriel haute tension : organisation et fonctionnement d’un poste électrique HT/MT. Étudié le schéma unifilaire du poste."
+        }
+      ]
+    },
+    {
+      "id": "person-core-learned-at-education-ensa",
+      "source": "person-core",
+      "target": "education-ensa",
+      "type": "LEARNED_AT",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Formation",
+          "evidence": "Diplôme d’ingénieur d’État en génie électrique — systèmes embarqués. 2022–en cours. École Nationale des Sciences Appliquées de Khouribga (ENSA Khouribga), Maroc."
+        }
+      ]
+    },
+    {
+      "id": "person-core-produced-project-ags",
+      "source": "person-core",
+      "target": "project-ags",
+      "type": "PRODUCED",
+      "weight": 1,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-produced-project-bms",
+      "source": "person-core",
+      "target": "project-bms",
+      "type": "PRODUCED",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "person-core-produced-project-safetybrain",
+      "source": "person-core",
+      "target": "project-safetybrain",
+      "type": "PRODUCED",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "person-core-produced-project-factory",
+      "source": "person-core",
+      "target": "project-factory",
+      "type": "PRODUCED",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-related-to-contact-email",
+      "source": "person-core",
+      "target": "contact-email",
+      "type": "RELATED_TO",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header",
+          "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+        }
+      ]
+    },
+    {
+      "id": "person-core-related-to-contact-linkedin",
+      "source": "person-core",
+      "target": "contact-linkedin",
+      "type": "RELATED_TO",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header / LinkedIn PDF hyperlink annotation",
+          "evidence": "The LinkedIn annotation URI is https://www.linkedin.com/in/rida-faradi-a66383304/."
+        }
+      ]
+    },
+    {
+      "id": "person-core-related-to-contact-phone",
+      "source": "person-core",
+      "target": "contact-phone",
+      "type": "RELATED_TO",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Header",
+          "evidence": "RIDA FARADI; +212 649 781 159; faradirida1@gmail.com; LinkedIn"
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-testing",
+      "source": "person-core",
+      "target": "skill-testing",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-adas",
+      "source": "person-core",
+      "target": "skill-adas",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-can",
+      "source": "person-core",
+      "target": "skill-can",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-lin",
+      "source": "person-core",
+      "target": "skill-lin",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-pid",
+      "source": "person-core",
+      "target": "skill-pid",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-acquisition",
+      "source": "person-core",
+      "target": "skill-acquisition",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-fault-detection",
+      "source": "person-core",
+      "target": "skill-fault-detection",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-documentation",
+      "source": "person-core",
+      "target": "skill-documentation",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-battery-soh",
+      "source": "person-core",
+      "target": "skill-battery-soh",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-canalyzer",
+      "source": "person-core",
+      "target": "tech-canalyzer",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-c-cpp",
+      "source": "person-core",
+      "target": "tech-c-cpp",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Programmation",
+          "evidence": "C/C++, Python, Arduino IDE."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-python",
+      "source": "person-core",
+      "target": "tech-python",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Programmation",
+          "evidence": "C/C++, Python, Arduino IDE."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-arduino",
+      "source": "person-core",
+      "target": "tech-arduino",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-esp32",
+      "source": "person-core",
+      "target": "tech-esp32",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-raspberry-pi",
+      "source": "person-core",
+      "target": "tech-raspberry-pi",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-stm32",
+      "source": "person-core",
+      "target": "tech-stm32",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-pic",
+      "source": "person-core",
+      "target": "tech-pic",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-uart",
+      "source": "person-core",
+      "target": "tech-uart",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-i2c",
+      "source": "person-core",
+      "target": "tech-i2c",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Systèmes embarqués",
+          "evidence": "STM32, PIC, ESP32, Arduino, Raspberry Pi; capteurs, actionneurs, UART, I2C."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-json",
+      "source": "person-core",
+      "target": "tech-json",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-http",
+      "source": "person-core",
+      "target": "tech-http",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-rest",
+      "source": "person-core",
+      "target": "tech-rest",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-fastapi",
+      "source": "person-core",
+      "target": "tech-fastapi",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-websocket",
+      "source": "person-core",
+      "target": "tech-websocket",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-ads1115",
+      "source": "person-core",
+      "target": "tech-ads1115",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-xgboost",
+      "source": "person-core",
+      "target": "tech-xgboost",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-streamlit",
+      "source": "person-core",
+      "target": "tech-streamlit",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-matlab",
+      "source": "person-core",
+      "target": "tech-matlab",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-labview",
+      "source": "person-core",
+      "target": "tech-labview",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-proteus",
+      "source": "person-core",
+      "target": "tech-proteus",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-vhdl-fpga",
+      "source": "person-core",
+      "target": "tech-vhdl-fpga",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Électronique et outils",
+          "evidence": "MATLAB, LabVIEW, Proteus, VHDL/FPGA, régulation PID, acquisition et intégration de systèmes."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-tech-arduino-ide",
+      "source": "person-core",
+      "target": "tech-arduino-ide",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Compétences techniques / Programmation",
+          "evidence": "C/C++, Python, Arduino IDE."
+        }
+      ]
+    },
+    {
+      "id": "person-core-related-to-experience-electrodays",
+      "source": "person-core",
+      "target": "experience-electrodays",
+      "type": "RELATED_TO",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Activités",
+          "evidence": "Vice-président de l’événement ElectroDays 9.0 (2025–2026)."
+        }
+      ]
+    },
+    {
+      "id": "person-core-related-to-experience-sport",
+      "source": "person-core",
+      "target": "experience-sport",
+      "type": "RELATED_TO",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Activités",
+          "evidence": "Responsable logistique et déplacements, ENSA Club Sportif (septembre 2024–juin 2025)."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-arabic",
+      "source": "person-core",
+      "target": "skill-arabic",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Langues",
+          "evidence": "Arabe (langue maternelle), français (courant), anglais (courant)."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-french",
+      "source": "person-core",
+      "target": "skill-french",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Langues",
+          "evidence": "Arabe (langue maternelle), français (courant), anglais (courant)."
+        }
+      ]
+    },
+    {
+      "id": "person-core-uses-skill-english",
+      "source": "person-core",
+      "target": "skill-english",
+      "type": "USES",
+      "weight": 0.68,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Langues et activités / Langues",
+          "evidence": "Arabe (langue maternelle), français (courant), anglais (courant)."
+        }
+      ]
+    },
+    {
+      "id": "experience-utac-uses-skill-testing",
+      "source": "experience-utac",
+      "target": "skill-testing",
+      "type": "USES",
+      "weight": 0.92,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "experience-utac-uses-skill-adas",
+      "source": "experience-utac",
+      "target": "skill-adas",
+      "type": "USES",
+      "weight": 0.92,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "experience-utac-uses-skill-can",
+      "source": "experience-utac",
+      "target": "skill-can",
+      "type": "USES",
+      "weight": 0.92,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "experience-utac-uses-skill-lin",
+      "source": "experience-utac",
+      "target": "skill-lin",
+      "type": "USES",
+      "weight": 0.92,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "experience-utac-uses-tech-canalyzer",
+      "source": "experience-utac",
+      "target": "tech-canalyzer",
+      "type": "USES",
+      "weight": 0.92,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "experience-utac-uses-skill-documentation",
+      "source": "experience-utac",
+      "target": "skill-documentation",
+      "type": "USES",
+      "weight": 0.92,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Expérience professionnelle / UTAC Maroc",
+          "evidence": "Participé à la préparation d’essais automobiles et à l’évaluation des fonctions ADAS BSD, RVC et DMS. Visualisé et analysé les communications CAN/LIN avec CANalyzer. Structuré les analyses et résultats d’essais dans une documentation technique standardisée."
+        }
+      ]
+    },
+    {
+      "id": "project-ags-built-with-tech-arduino",
+      "source": "project-ags",
+      "target": "tech-arduino",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-ags-built-with-tech-esp32",
+      "source": "project-ags",
+      "target": "tech-esp32",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-ags-uses-skill-pid",
+      "source": "project-ags",
+      "target": "skill-pid",
+      "type": "USES",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-ags-built-with-tech-uart",
+      "source": "project-ags",
+      "target": "tech-uart",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-ags-built-with-tech-json",
+      "source": "project-ags",
+      "target": "tech-json",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-ags-built-with-tech-http",
+      "source": "project-ags",
+      "target": "tech-http",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Calandre active (AGS)",
+          "evidence": "Arduino, ESP32, PID, UART, HTTP. Développé une régulation PID pour piloter les volets selon la température et la vitesse; relié les contrôleurs par UART/JSON et contribué à la supervision Web en temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-bms-built-with-tech-python",
+      "source": "project-bms",
+      "target": "tech-python",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "project-bms-built-with-tech-xgboost",
+      "source": "project-bms",
+      "target": "tech-xgboost",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "project-bms-built-with-tech-streamlit",
+      "source": "project-bms",
+      "target": "tech-streamlit",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "project-bms-uses-skill-battery-soh",
+      "source": "project-bms",
+      "target": "skill-battery-soh",
+      "type": "USES",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / BMS",
+          "evidence": "BMS — prédiction du SOH de batteries lithium-ion. Python, XGBoost, Streamlit. Développé un modèle XGBoost de prédiction du SOH et une interface Streamlit pour visualiser les résultats."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-built-with-tech-esp32",
+      "source": "project-safetybrain",
+      "target": "tech-esp32",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-built-with-tech-arduino",
+      "source": "project-safetybrain",
+      "target": "tech-arduino",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-built-with-tech-uart",
+      "source": "project-safetybrain",
+      "target": "tech-uart",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-built-with-tech-json",
+      "source": "project-safetybrain",
+      "target": "tech-json",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-built-with-tech-rest",
+      "source": "project-safetybrain",
+      "target": "tech-rest",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-uses-skill-fault-detection",
+      "source": "project-safetybrain",
+      "target": "skill-fault-detection",
+      "type": "USES",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-safetybrain-uses-skill-acquisition",
+      "source": "project-safetybrain",
+      "target": "skill-acquisition",
+      "type": "USES",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / SAFETYBRAIN STATION",
+          "evidence": "ESP32, Arduino, UART, JSON, API REST. Conçu une architecture distribuée de détection de défauts sur réseau triphasé; développé l’acquisition et les échanges UART/JSON."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-built-with-tech-raspberry-pi",
+      "source": "project-factory",
+      "target": "tech-raspberry-pi",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-built-with-tech-python",
+      "source": "project-factory",
+      "target": "tech-python",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-built-with-tech-fastapi",
+      "source": "project-factory",
+      "target": "tech-fastapi",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-built-with-tech-websocket",
+      "source": "project-factory",
+      "target": "tech-websocket",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-built-with-tech-i2c",
+      "source": "project-factory",
+      "target": "tech-i2c",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-built-with-tech-ads1115",
+      "source": "project-factory",
+      "target": "tech-ads1115",
+      "type": "BUILT_WITH",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    },
+    {
+      "id": "project-factory-uses-skill-acquisition",
+      "source": "project-factory",
+      "target": "skill-acquisition",
+      "type": "USES",
+      "weight": 0.8,
+      "sourceRefs": [
+        {
+          "sourceId": "cv-automobile",
+          "locator": "Page 1 / Projets pertinents / Mini-usine intelligente",
+          "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
+        }
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "id": "tour-profile",
+      "title": "The gateway",
+      "nodeIds": [
+        "person-core"
+      ]
+    },
+    {
+      "id": "tour-education",
+      "title": "Electrical foundations",
+      "nodeIds": [
+        "education-ensa"
+      ]
+    },
+    {
+      "id": "tour-skills",
+      "title": "From signals to systems",
+      "nodeIds": [
+        "skill-can",
+        "skill-lin",
+        "skill-pid",
+        "tech-esp32",
+        "tech-python"
+      ]
+    },
+    {
+      "id": "tour-experience",
+      "title": "Automotive experience",
+      "nodeIds": [
+        "experience-utac",
+        "experience-ocp"
+      ]
+    },
+    {
+      "id": "tour-projects",
+      "title": "Engineering in practice",
+      "nodeIds": [
+        "project-ags",
+        "project-bms",
+        "project-safetybrain",
+        "project-factory"
+      ]
+    },
+    {
+      "id": "tour-contact",
+      "title": "Open the diagnostic port",
+      "nodeIds": [
+        "contact-email",
+        "contact-linkedin",
+        "contact-phone"
+      ]
+    }
+  ],
+  "placeholders": [
+    {
+      "path": "nodes[type=Certification]",
+      "reason": "No certification is stated in the supplied CVs; no certification nodes are asserted."
+    },
+    {
+      "path": "nodes[type=Contact][name=GitHub]",
+      "reason": "No GitHub URL was found in the supplied CV text or hyperlink annotations; the contact is omitted."
+    },
+    {
+      "path": "nodes[type=Project].details.links",
+      "reason": "No project repository, demo or publication URLs are provided in the CVs; project links are omitted."
+    },
+    {
+      "path": "nodes[type=Project].details.dateLabel",
+      "reason": "Dates are not stated for AGS, BMS or SAFETYBRAIN; those date labels remain null. The mini-factory is dated 2025–2026."
+    },
+    {
+      "path": "nodes[type=Project].details.outcome",
+      "reason": "No independently measured impact or model accuracy is supplied; outcomes remain null. A <50 ms SAFETYBRAIN response claim is present in the CV but is deliberately omitted from public copy because its test conditions are unspecified."
+    },
+    {
+      "path": "details.visualization",
+      "reason": "Waveforms, CAN frames, power curves and sensor streams are illustrative UI selections, not measured CV project data. Label them as illustrative."
+    }
+  ]
+}

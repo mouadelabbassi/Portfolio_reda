@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--SEO-->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#classic">Skip to portfolio content</a>
+  <div id="app" hidden>
+    <header class="topbar">
+      <a class="brand" href="#" id="home" aria-label="ME SIGNAL home">ME<span>/</span>SIGNAL<span class="brand-mark">®</span></a>
+      <div class="identity"><span id="identity-name"></span><span>ENGINEERING PORTFOLIO <span class="muted">/ 2026</span></span></div>
+      <nav aria-label="Portfolio navigation"><button id="about-button">About</button><button id="contact-button">Let’s connect <span aria-hidden="true">↗</span></button><button id="classic-button" class="view-button" aria-pressed="false"><span aria-hidden="true">▤</span> Classic view</button></nav>
+    </header>
+    <main class="cockpit" id="cockpit">
+      <div class="coordinate coordinate-top" aria-hidden="true">RF.GATEWAY <span>01 / LIVE NETWORK</span></div>
+      <div class="scene" id="scene" role="region" aria-label="Interactive 3D portfolio knowledge graph. Drag to orbit, pinch or scroll to zoom. Use the node index for keyboard navigation."></div>
+      <div class="scene-vignette" aria-hidden="true"></div>
+      <section class="intro" id="intro" aria-label="Introduction">
+        <p class="eyebrow"><span class="status-dot"></span> OPEN FOR PFE · 2027</p>
+        <h1>From circuit.<br>To <em>system.</em></h1>
+        <p class="intro-name" id="intro-name"></p>
+        <p class="intro-role" id="intro-role"></p>
+        <p class="intro-copy">Explore the connections between<br>my experience, projects and skills.</p>
+        <button class="primary-link" id="start-tour">Take the road trip <span aria-hidden="true">↗</span></button>
+        <div class="intro-foot"><span class="micro-line"></span><span>DESIGNED LIKE A VEHICLE NETWORK.<br>BUILT AROUND AN ENGINEERING JOURNEY.</span></div>
+      </section>
+      <aside class="domain-panel" aria-label="Domain filters"><p class="eyebrow">DOMAIN CONTROLLERS</p><div id="domains"></div><button id="show-all" class="text-button">View entire network <span aria-hidden="true">↗</span></button></aside>
+      <div class="network-caption" aria-hidden="true"><span class="corner"></span><div>CENTRAL GATEWAY<span id="gateway-name"></span></div></div>
+      <div class="scene-instructions"><span aria-hidden="true">⌖</span> DRAG TO ORBIT <span class="instruction-divider">/</span> SELECT TO TRACE</div>
+      <svg class="detail-anchor" id="detail-anchor" aria-hidden="true" hidden><path id="anchor-path"/><circle id="anchor-point" r="3"/></svg>
+      <section class="detail-panel" id="detail" aria-labelledby="detail-name" hidden>
+        <div class="detail-top"><span class="eyebrow" id="detail-type"></span><button id="close-detail" class="icon-button" aria-label="Close details">×</button></div>
+        <p id="detail-meta" class="detail-meta"></p><h2 id="detail-name" tabindex="-1"></h2><p id="detail-summary"></p>
+        <div id="detail-body"></div><div id="detail-stack" class="tag-list"></div><div id="detail-links" class="detail-links"></div>
+        <div class="trace-heading"><span class="eyebrow">SIGNAL TRACE</span><span>ILLUSTRATIVE</span></div><canvas id="trace" width="520" height="110" aria-label="Illustrative oscilloscope signal, not measured project data" role="img"></canvas>
+        <div class="related-heading"><span class="eyebrow">CONNECTED NODES</span><span id="related-count"></span></div><div id="related"></div>
+      </section>
+      <section class="tour-panel" id="tour-panel" hidden aria-label="Guided road trip"><div class="tour-label"><span class="eyebrow">ROAD TRIP <span id="tour-position"></span></span><button id="exit-tour" class="text-button">Free explore ↗</button></div><h2 id="tour-title"></h2><p id="tour-description"></p><div class="tour-controls"><button id="tour-prev" aria-label="Previous chapter">←</button><div id="tour-dots"></div><button id="tour-next" aria-label="Next chapter">→</button><span>SCROLL TO CONTINUE</span></div></section>
+      <div class="tour-scroll-hint" id="tour-hint" hidden>SCROLL TO DRIVE <span aria-hidden="true">↓</span></div>
+      <section class="terminal" id="terminal" aria-label="Diagnostic query terminal" hidden><div class="terminal-heading"><div><span class="status-dot"></span><span class="eyebrow">NETWORK DIAGNOSTICS</span><span class="terminal-version">v1.0</span></div><button id="close-terminal" class="icon-button" aria-label="Close terminal">×</button></div><p class="terminal-help">Find a skill. Follow a connection. Explore the network.</p><form id="query-form"><label for="query" class="sr-only">Graph query</label><span class="query-prompt" aria-hidden="true">&gt;_</span><input id="query" autocomplete="off" spellcheck="false" placeholder="Try projects, CAN, or hire me…" list="query-completions"><button type="submit" aria-label="Run query">↵</button></form><datalist id="query-completions"></datalist><div id="suggestions" class="suggestions"></div><div id="query-result" role="status" aria-live="polite">Five routes into the network. Choose one to begin.</div><div id="query-matches"></div></section>
+      <section class="node-index" id="node-index" hidden aria-label="Keyboard accessible node index"><div class="detail-top"><span class="eyebrow">NETWORK INDEX</span><button id="close-index" class="icon-button" aria-label="Close node index">×</button></div><label for="index-search" class="sr-only">Filter network nodes</label><input id="index-search" placeholder="Find a node…" type="search"><div id="index-list"></div></section>
+      <div class="bottom-hud"><div class="view-controls" role="group" aria-label="Graph layout"><button class="active" data-layout="network" aria-pressed="true"><span aria-hidden="true">⌘</span> Network</button><button data-layout="vehicle" aria-pressed="false"><span aria-hidden="true">◇</span> Vehicle</button><button data-layout="schematic" aria-pressed="false"><span aria-hidden="true">⌁</span> Schematic</button></div><button id="open-terminal" class="terminal-toggle"><span aria-hidden="true">&gt;_</span> Diagnostic terminal <kbd>/</kbd></button><button id="open-index" class="index-toggle" aria-label="Open accessible node index">Node index <span aria-hidden="true">↗</span></button></div>
+    </main>
+    <footer class="statusbar"><span><span class="status-dot"></span> NETWORK ONLINE <span class="muted" id="network-count"></span></span><span class="status-middle">ELECTRICAL THINKING. CONNECTED SYSTEMS.</span><div><button id="motion-button" aria-pressed="false" aria-label="Pause animated signals">Motion on</button><span id="quality-label">ADAPTIVE QUALITY</span><span id="debug" hidden></span></div></footer>
+    <section class="boot" id="boot" aria-label="Ignition sequence"><div class="boot-brand brand">ME<span>/</span>SIGNAL</div><span class="eyebrow">IGNITION SEQUENCE</span><div class="boot-gauge"><svg viewBox="0 0 200 100" aria-hidden="true"><path d="M12 90a78 78 0 0 1 156 0"/><path class="gauge-sweep" d="M12 90a78 78 0 0 1 156 0"/></svg><span id="boot-percent">00</span><span class="eyebrow">CONNECTING SYSTEMS</span></div><div class="boot-log" id="boot-log" aria-live="polite">INITIALIZING CENTRAL GATEWAY</div><button id="skip-boot" class="text-button">Skip ignition ↗</button></section>
+  </div>
+  <div class="tour-track" id="tour-track" aria-hidden="true"></div>
+  <main id="classic" class="classic-content"><!--CLASSIC--></main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
