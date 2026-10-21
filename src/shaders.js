@@ -80,10 +80,8 @@ export const traceVertex = /* glsl */ `
   attribute vec3 aNextSchematic;
   attribute vec3 aProgress;
   attribute vec3 aAccent;
-  attribute float aSide;
-  attribute float aSeed;
+  attribute vec3 aStyle;
   attribute float aFocus;
-  attribute float aWeight;
   uniform vec3 uWeights;
   uniform vec2 uResolution;
   uniform float uWidth;
@@ -103,13 +101,13 @@ export const traceVertex = /* glsl */ `
     vec2 direction = (nextClip.xy / nextClip.w - previousClip.xy / previousClip.w) * uResolution;
     direction = normalize(direction + vec2(0.0001));
     vec2 perpendicular = vec2(-direction.y, direction.x);
-    clip.xy += perpendicular * aSide * uWidth * (0.8 + aFocus * 0.28) * (0.58 + aWeight * 0.67) / uResolution * clip.w;
-    vSide = aSide;
+    clip.xy += perpendicular * aStyle.x * uWidth * (0.8 + aFocus * 0.28) * (0.58 + aStyle.z * 0.67) / uResolution * clip.w;
+    vSide = aStyle.x;
     vProgress = dot(aProgress, uWeights);
     vAccent = aAccent;
-    vSeed = aSeed;
+    vSeed = aStyle.y;
     vFocus = aFocus;
-    vWeight = aWeight;
+    vWeight = aStyle.z;
     gl_Position = clip;
   }
 `;
