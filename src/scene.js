@@ -17,14 +17,18 @@ function surface(geometry, brightness = 0) {
 
 // Small, purpose-built electronic assemblies: pins, heatsinks, coils and
 // optical housings carry the semantics before a label has to explain them.
-function makeAssembly(kind) {
+export function makeAssembly(kind) {
   const pieces = [];
   const add = (geometry, position = [0, 0, 0], brightness = 0, rotation = [0, 0, 0]) => {
     geometry.rotateX(rotation[0]);
     geometry.rotateY(rotation[1]);
     geometry.rotateZ(rotation[2]);
     geometry.translate(...position);
-    pieces.push(surface(geometry, brightness));
+    // ExtrudeGeometry is non-indexed, while the other primitives are indexed.
+    // mergeGeometries requires a consistent representation for every piece.
+    const piece = geometry.index ? geometry.toNonIndexed() : geometry;
+    if (piece !== geometry) geometry.dispose();
+    pieces.push(surface(piece, brightness));
   };
   const box = (size, position, brightness) => add(new THREE.BoxGeometry(...size), position, brightness);
   const pins = (count, radiusX, radiusZ, height = 0.02) => {
@@ -100,12 +104,12 @@ function makeAssembly(kind) {
   return merged;
 }
 
-function createTraceGeometry(graph, layouts, colorForNode) {
+export function createTraceGeometry(graph, layouts, colorForNode) {
   const attributes = {
     aNetwork: [], aVehicle: [], aSchematic: [],
     aPrevNetwork: [], aPrevVehicle: [], aPrevSchematic: [],
     aNextNetwork: [], aNextVehicle: [], aNextSchematic: [],
-    aProgress: [], aAccent: [], aSide: [], aSeed: [], aFocus: [], aWeight: [],
+    aProgress: [], aAccent: [], aStyle: [], aFocus: [],
   };
   const indices = [];
   const edgeRanges = [];
@@ -122,7 +126,7 @@ function createTraceGeometry(graph, layouts, colorForNode) {
       return values.map((value) => value / (values.at(-1) || 1));
     });
     const color = colorForNode(source);
-    const start = attributes.aSide.length;
+    const start = attributes.aFocus.length;
     paths[0].forEach((_, pointIndex) => {
       for (const side of [-1, 1]) {
         ['Network', 'Vehicle', 'Schematic'].forEach((name, layoutIndex) => {
@@ -133,10 +137,10 @@ function createTraceGeometry(graph, layouts, colorForNode) {
         });
         attributes.aProgress.push(...distances.map((distance) => distance[pointIndex]));
         attributes.aAccent.push(color.r, color.g, color.b);
-        attributes.aSide.push(side);
-        attributes.aSeed.push(seed);
+        // Pack side, seed and weight into one slot to leave headroom under
+        // the GPU's vertex-attribute limit (including Three's attributes).
+        attributes.aStyle.push(side, seed, edge.weight != null && Number.isFinite(Number(edge.weight)) ? clamp(Number(edge.weight), 0, 1.4) : 0.5);
         attributes.aFocus.push(0.8);
-        attributes.aWeight.push(edge.weight != null && Number.isFinite(Number(edge.weight)) ? clamp(Number(edge.weight), 0, 1.4) : 0.5);
       }
       if (pointIndex < paths[0].length - 1) {
         const index = start + pointIndex * 2;
@@ -146,7 +150,7 @@ function createTraceGeometry(graph, layouts, colorForNode) {
     edgeRanges.push({ source, target, start, count: paths[0].length * 2 });
   });
   const geometry = new THREE.BufferGeometry();
-  for (const [name, values] of Object.entries(attributes)) geometry.setAttribute(name, new THREE.Float32BufferAttribute(values, /a(Side|Seed|Focus|Weight)$/.test(name) ? 1 : 3));
+  for (const [name, values] of Object.entries(attributes)) geometry.setAttribute(name, new THREE.Float32BufferAttribute(values, name === 'aFocus' ? 1 : 3));
   // A conventional position buffer keeps Three's renderer and diagnostics
   // happy; all actual spatial transforms happen in the shared shader.
   geometry.setAttribute('position', geometry.getAttribute('aNetwork').clone());

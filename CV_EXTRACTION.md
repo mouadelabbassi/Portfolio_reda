@@ -16,7 +16,7 @@ The automobile, PFE, Maroc, Stellantis, UTAC and AVL CV variants were compared. 
 
 | Category | Verified content |
 | --- | --- |
-| Profile | Rida Faradi; electrical and embedded engineering student; seeking a 2027 PFE internship in automotive embedded systems. |
+| Profile | Rida Faradi; electrical and embedded engineering student; seeking a 2027 PFE internship. |
 | Education | State engineering degree in electrical engineering, embedded systems, at ENSA Khouribga; 2022–present, in progress. No completed engineering degree is claimed. |
 | Latest experience | UTAC Maroc, PFA internship, July–August 2026, Oued Zem: automotive test preparation; ADAS BSD/RVC/DMS; CAN/LIN analysis with CANalyzer; technical documentation. |
 | Earlier experience | OCP Group, Khouribga industrial site, introductory internship, July–August 2025: observed HV/MV substation organization and operation; studied its single-line diagram. This is not presented as autonomous HV design or maintenance responsibility. |

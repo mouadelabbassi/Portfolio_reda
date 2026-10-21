@@ -14,5 +14,5 @@ export default defineConfig({
     }
   }],
   build: { target: 'es2022', chunkSizeWarningLimit: 650, rollupOptions: { output: { manualChunks: { three: ['three'] } } } },
-  server: { port: 5173, strictPort: true }
+  server: { port: 5173, strictPort: false }
 });
