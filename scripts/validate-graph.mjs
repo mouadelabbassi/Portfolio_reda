@@ -8,7 +8,7 @@ const ID = /^[a-z][a-z0-9-]*$/u;
 const isObject = (value) => value !== null && typeof value === 'object' && !Array.isArray(value);
 const hasText = (value) => typeof value === 'string' && value.trim().length > 0;
 
-/** Only web/contact links and local PDF downloads may enter rendered content. */
+/** Web/contact links, local PDFs, and specifically scoped case-study pages only. */
 export function isSafeLink(value) {
   if (!hasText(value) || /[\u0000-\u0020\u007f\\]/u.test(value)) return false;
   if (/^https:\/\//iu.test(value)) {
@@ -33,7 +33,7 @@ export function isSafeLink(value) {
   return !/[:\\\u0000-\u0020\u007f]/u.test(decoded)
     && !decoded.startsWith('//')
     && !decoded.split('/').includes('..')
-    && /\.pdf$/iu.test(decoded);
+    && (/\.pdf$/iu.test(decoded) || /^\/projects\/[a-z0-9-]+\.html$/iu.test(decoded));
 }
 
 /**
@@ -74,12 +74,12 @@ export function validateGraph(graph) {
   const byId = new Map(nodes.filter(isObject).map((node) => [node.id, node]));
   const checkRefs = (refs, location, required = true) => {
     if (!Array.isArray(refs)) { fail(location, 'expected evidence sourceRefs array'); return; }
-    if (required && refs.length === 0) fail(location, 'verified content requires CV evidence');
+    if (required && refs.length === 0) fail(location, 'verified content requires source evidence');
     refs.forEach((ref, index) => {
       const refPath = `${location}[${index}]`;
       if (!isObject(ref)) { fail(refPath, 'expected {sourceId, locator, evidence}'); return; }
       if (!sourceIds.has(ref.sourceId)) fail(`${refPath}.sourceId`, `unknown source ${ref.sourceId}`);
-      if (!hasText(ref.locator)) fail(`${refPath}.locator`, 'CV location is required');
+      if (!hasText(ref.locator)) fail(`${refPath}.locator`, 'source location is required');
       if (!hasText(ref.evidence)) fail(`${refPath}.evidence`, 'supporting CV text is required');
     });
   };
@@ -95,7 +95,7 @@ export function validateGraph(graph) {
   };
   sources.forEach((source, index) => {
     if (!isObject(source)) return;
-    if (source.kind !== 'cv') fail(`sources[${index}].kind`, 'facts must come from CV sources');
+    if (!['cv','project-brief'].includes(source.kind)) fail(`sources[${index}].kind`, 'facts must come from CVs or explicit project briefs');
     if (!hasText(source.fileName)) fail(`sources[${index}].fileName`, 'source file name is required');
     if (source.sha256 !== undefined && !/^[a-f0-9]{64}$/iu.test(source.sha256)) fail(`sources[${index}].sha256`, 'expected a SHA-256 checksum');
   });
@@ -195,7 +195,7 @@ if (isMain) {
       console.error(`Graph validation failed (${result.errors.length}):\n${result.errors.map((error) => `  • ${error}`).join('\n')}`);
       process.exitCode = 1;
     } else {
-      console.log(`Graph valid: ${result.summary.verifiedNodes} verified nodes, ${result.summary.relationships} relationships, ${result.summary.sources} CV sources, ${result.summary.clusters} clusters.`);
+      console.log(`Graph valid: ${result.summary.verifiedNodes} verified nodes, ${result.summary.relationships} relationships, ${result.summary.sources} evidence sources, ${result.summary.clusters} clusters.`);
       console.log(Object.entries(result.summary.counts).map(([type, count]) => `${type}: ${count}`).join(' · '));
       if (result.summary.placeholderNodes) console.log(`${result.summary.placeholderNodes} documented draft placeholders are hidden from production content.`);
     }
