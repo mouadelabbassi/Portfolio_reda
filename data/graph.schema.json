@@ -397,8 +397,15 @@
                   },
                   "url": {
                     "type": "string",
-                    "format": "uri",
-                    "description": "Safe HTTPS, mailto, tel, local PDF download or an approved /projects/*.html case-study page."
+                    "description": "Safe HTTPS, mailto, tel, local PDF download or an approved /projects/*.html case-study page.",
+                    "anyOf": [
+                      {
+                        "format": "uri"
+                      },
+                      {
+                        "pattern": "^/projects/[a-z0-9-]+\\.html$"
+                      }
+                    ]
                   },
                   "sourceRefs": {
                     "type": "array",

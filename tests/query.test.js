@@ -182,7 +182,7 @@ test('graph validation requires usable evidence for nodes, relationships and lin
   graph.nodes.at(-1).details.links = [{ label: 'Demo', url: 'https://example.org', sourceRefs: [] }];
   const result = validateGraph(graph);
   assert.equal(result.valid, false);
-  assert.match(result.errors.join('\n'), /verified content requires CV evidence/u);
+  assert.match(result.errors.join('\n'), /verified content requires source evidence/u);
   assert.match(result.errors.join('\n'), /unknown source missing-source/u);
 });
 
