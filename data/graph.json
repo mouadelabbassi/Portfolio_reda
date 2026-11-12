@@ -20,6 +20,11 @@
       "kind": "cv",
       "fileName": "CV_Rida_Faradi_maroc_format.pdf",
       "sha256": "c5cfeb4963fee6db9ad4dcc2e9ad157b104e93c2fd840e650d2b4f42300fa2bb"
+    },
+    {
+      "id": "brief-4s-bms",
+      "kind": "project-brief",
+      "fileName": "4S BMS project brief supplied 2026-11-12"
     }
   ],
   "identity": {
@@ -62,7 +67,9 @@
         "skill-battery-soh",
         "tech-matlab",
         "tech-labview",
-        "tech-proteus"
+        "tech-proteus",
+        "tech-simulink",
+        "project-4s-bms"
       ]
     },
     {
@@ -82,7 +89,9 @@
         "tech-i2c",
         "tech-ads1115",
         "tech-vhdl-fpga",
-        "tech-arduino-ide"
+        "tech-arduino-ide",
+        "tech-bq76942",
+        "tech-kicad"
       ]
     },
     {
@@ -99,7 +108,9 @@
         "tech-fastapi",
         "tech-websocket",
         "tech-xgboost",
-        "tech-streamlit"
+        "tech-streamlit",
+        "tech-javascript",
+        "tech-html-css"
       ]
     }
   ],
@@ -213,6 +224,51 @@
         "dateLabel": "2022–present",
         "role": "Engineering student",
         "visualization": "none"
+      }
+    },
+    {
+      "id": "project-4s-bms",
+      "type": "Project",
+      "name": "4S Lithium-Ion Battery Management System",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Overview",
+          "evidence": "Academic ESP32/BQ76942 BMS, KiCad PCB, MATLAB/Simulink 4S battery model, HTML/CSS/JavaScript cockpit. Design and simulation completed; hardware pending."
+        }
+      ],
+      "details": {
+        "summary": "4S BMS PCB design (16.8 V maximum, 10 A design target), MATLAB/Simulink battery protection model, and offline BMS Cockpit replaying simulation exports. Hardware implementation pending.",
+        "organization": "Academic engineering project",
+        "dateLabel": null,
+        "problem": "Study monitoring, passive balancing and modeled latched undervoltage, overvoltage, overcurrent and overtemperature protection for four series lithium-ion cell groups.",
+        "role": "Designed the ESP32/BQ76942 KiCad schematic, PCB and 3D model; developed MATLAB/Simulink simulation scenarios and a browser dashboard with JSON import and playback.",
+        "outcome": "Design and simulation completed; physical assembly, embedded firmware, live ESP32 communication and hardware tests remain future work.",
+        "stackNodeIds": [
+          "tech-esp32",
+          "tech-bq76942",
+          "tech-kicad",
+          "tech-matlab",
+          "tech-simulink",
+          "tech-javascript",
+          "tech-html-css"
+        ],
+        "visualization": "power-curve",
+        "links": [
+          {
+            "label": "Read BMS case study",
+            "url": "/projects/4s-bms.html",
+            "sourceRefs": [
+              {
+                "sourceId": "brief-4s-bms",
+                "locator": "Project brief / Case study",
+                "evidence": "Dedicated page created from this project brief; no real external repo, demo or report URL supplied."
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1103,6 +1159,91 @@
       "details": {
         "summary": "Fluent, as stated in the CV.",
         "visualization": "none"
+      }
+    },
+    {
+      "id": "tech-bq76942",
+      "type": "Technology",
+      "name": "BQ76942",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ],
+      "details": {
+        "summary": "Technology used in the 4S BMS design/simulation or browser dashboard; physical implementation is pending."
+      }
+    },
+    {
+      "id": "tech-kicad",
+      "type": "Technology",
+      "name": "KiCad",
+      "status": "verified",
+      "clusterId": "embedded",
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ],
+      "details": {
+        "summary": "Technology used in the 4S BMS design/simulation or browser dashboard; physical implementation is pending."
+      }
+    },
+    {
+      "id": "tech-simulink",
+      "type": "Technology",
+      "name": "Simulink",
+      "status": "verified",
+      "clusterId": "electrical",
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ],
+      "details": {
+        "summary": "Technology used in the 4S BMS design/simulation or browser dashboard; physical implementation is pending."
+      }
+    },
+    {
+      "id": "tech-javascript",
+      "type": "Technology",
+      "name": "JavaScript",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ],
+      "details": {
+        "summary": "Technology used in the 4S BMS design/simulation or browser dashboard; physical implementation is pending."
+      }
+    },
+    {
+      "id": "tech-html-css",
+      "type": "Technology",
+      "name": "HTML/CSS",
+      "status": "verified",
+      "clusterId": "software",
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ],
+      "details": {
+        "summary": "Technology used in the 4S BMS design/simulation or browser dashboard; physical implementation is pending."
       }
     }
   ],
@@ -2184,6 +2325,118 @@
           "evidence": "Projet en équipe, 2025–2026 | Raspberry Pi 4, Python, FastAPI, WebSocket, I2C, ADS1115. Contribué à l’acquisition de mesures, à la commande d’actionneurs et à la gestion d’alertes; intégré un ADS1115 via I2C et participé à un tableau de bord Web temps réel."
         }
       ]
+    },
+    {
+      "id": "person-core-produced-project-4s-bms",
+      "source": "person-core",
+      "target": "project-4s-bms",
+      "type": "PRODUCED",
+      "weight": 0.76,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Project request",
+          "evidence": "Include this academic 4S BMS engineering project as a featured portfolio project."
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-esp32",
+      "source": "project-4s-bms",
+      "target": "tech-esp32",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-bq76942",
+      "source": "project-4s-bms",
+      "target": "tech-bq76942",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-kicad",
+      "source": "project-4s-bms",
+      "target": "tech-kicad",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-matlab",
+      "source": "project-4s-bms",
+      "target": "tech-matlab",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-simulink",
+      "source": "project-4s-bms",
+      "target": "tech-simulink",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-javascript",
+      "source": "project-4s-bms",
+      "target": "tech-javascript",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
+    },
+    {
+      "id": "project-4s-bms-built-with-tech-html-css",
+      "source": "project-4s-bms",
+      "target": "tech-html-css",
+      "type": "BUILT_WITH",
+      "weight": 0.65,
+      "sourceRefs": [
+        {
+          "sourceId": "brief-4s-bms",
+          "locator": "Project brief / Technology tags",
+          "evidence": "ESP32 · BQ76942 · KiCad · MATLAB · Simulink · JavaScript · HTML/CSS"
+        }
+      ]
     }
   ],
   "tour": [
@@ -2224,6 +2477,7 @@
       "id": "tour-projects",
       "title": "Engineering in practice",
       "nodeIds": [
+        "project-4s-bms",
         "project-ags",
         "project-bms",
         "project-safetybrain",
@@ -2251,7 +2505,7 @@
     },
     {
       "path": "nodes[type=Project].details.links",
-      "reason": "No project repository, demo or publication URLs are provided in the CVs; project links are omitted."
+      "reason": "Older CV projects have no supplied repository/demo/report links. This 4S BMS project links only to its own case-study page; no external project links were provided."
     },
     {
       "path": "nodes[type=Project].details.dateLabel",
@@ -2264,6 +2518,10 @@
     {
       "path": "details.visualization",
       "reason": "Waveforms, CAN frames, power curves and sensor streams are illustrative UI selections, not measured CV project data. Label them as illustrative."
+    },
+    {
+      "path": "nodes[id=project-4s-bms].media",
+      "reason": "No original KiCad renders, MATLAB plots or dashboard screenshots were supplied or found in this repository; case-study media slots are explicitly marked rather than filled with invented imagery."
     }
   ]
 }

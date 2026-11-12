@@ -63,9 +63,13 @@ CAN is evidenced in the UTAC experience. The engine returns zero for a Projectâ†
 
 ## Edit content
 
-All personal content is in `data/graph.json`; the build uses the same file for WebGL, cards, queries, metadata and prerendered Classic content. `CV_EXTRACTION.md` contains the verification table and reconciliation decisions. The three source CV filenames and SHA-256 checksums are recorded in the graph. The public download is `public/cv-rida-faradi.pdf`.
+All portfolio graph content is in `data/graph.json`; the build uses the same file for WebGL, cards, queries, metadata and prerendered Classic content. Original CV sources remain distinct from the explicit 4S BMS project brief. `CV_EXTRACTION.md` contains the verification table and reconciliation decisions. The three source CV filenames and SHA-256 checksums are recorded in the graph. The public download is `public/cv-rida-faradi.pdf`.
 
 The automotive CV is primary; PFE corroborates it and clarifies SAFETYBRAIN; Maroc format documents the earlier OCP observation internship. Application targets are not listed as employers. The degree remains explicitly in progress. Missing links, certifications, dates and metrics are documented in `placeholders` and omitted from public claims.
+
+### Featured 4S BMS case study
+
+A dedicated page at `/projects/4s-bms.html` documents the 4S Lithium-Ion Battery Management System. It is a separate project from the XGBoost battery-SOH predictor and is featured in Network and Classic views. Design and simulation are complete; hardware assembly, embedded firmware, live ESP32 telemetry and physical testing are pending. The 10 A value is a PCB design target, not a measured hardware specification. Original screenshots and external project links were not provided, so the page uses clearly labeled media placeholders.
 
 ### Schema
 
@@ -77,7 +81,7 @@ The automotive CV is primary; PFE corroborates it and clarifies SAFETYBRAIN; Mar
 | `sources` | CV source IDs, filenames and checksums. |
 | `nodes` | `id`, `type`, `name`, `status`, `clusterId`, `sourceRefs`, `details`. Types: Person, Project, Skill, Technology, Experience, Education, Certification, Contact. |
 | `details` | Optional summary, organization, dateLabel, problem, role, outcome, stackNodeIds, visualization and links. Omit unsupported content or use `null` and document why. |
-| `sourceRefs` | Source ID, page/section locator, and supporting CV evidence. Required for verified facts and relations; not displayed as passages in the UI. |
+| `sourceRefs` | Source ID, page/section locator, and supporting CV or explicitly provided project-brief evidence. Required for verified facts and relations; not displayed as passages in the UI. |
 | `clusters` | Derived editorial groups with color and supporting node IDs. They are not additional qualifications. |
 | `edges` | Source and target IDs; USES, BUILT_WITH, LEARNED_AT, PRODUCED or RELATED_TO; weight in [0,1]; evidence. |
 | `tour` | Ordered titles and existing verified node IDs. Descriptions fall back to the first nodeâ€™s summary. |

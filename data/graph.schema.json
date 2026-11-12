@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "ME/SIGNAL CV-backed knowledge graph",
+  "title": "ME/SIGNAL engineering knowledge graph with explicit source provenance",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -44,7 +44,10 @@
             "$ref": "#/$defs/id"
           },
           "kind": {
-            "const": "cv"
+            "enum": [
+              "cv",
+              "project-brief"
+            ]
           },
           "fileName": {
             "type": "string",
@@ -55,7 +58,8 @@
             "pattern": "^[a-fA-F0-9]{64}$"
           }
         }
-      }
+      },
+      "description": "Evidence from original CVs or user-supplied engineering project briefs."
     },
     "identity": {
       "type": "object",
@@ -394,7 +398,7 @@
                   "url": {
                     "type": "string",
                     "format": "uri",
-                    "description": "Application validator allows only https:, mailto: and tel: schemes. The profile CV download is a same-origin root path."
+                    "description": "Safe HTTPS, mailto, tel, local PDF download or an approved /projects/*.html case-study page."
                   },
                   "sourceRefs": {
                     "type": "array",
@@ -449,5 +453,5 @@
     }
   },
   "$id": "https://me-signal.local/graph.schema.json",
-  "description": "All published personal facts must be supported by CV sourceRefs. IDs, references, safe link schemes and factual accuracy additionally require application validation. The placeholders array records optional omissions and editorial limitations; it does not create published factual nodes."
+  "description": "Verified graph facts cite an appropriate CV or explicitly supplied project brief; safe links and unique references remain validated."
 }

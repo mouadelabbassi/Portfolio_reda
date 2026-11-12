@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a1013">
+<meta name="description" content="4S lithium-ion BMS engineering case study: ESP32/BQ76942 PCB design, MATLAB/Simulink protection model and offline simulation dashboard. Hardware implementation pending.">
+<title>4S Lithium-Ion BMS — Engineering Case Study | ME/SIGNAL</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+:root{font-family:"Segoe UI",Arial,sans-serif;color:#e8eeed;background:#0a1013;--bg:#0a1013;--surface:#111b1c;--muted:#a3b6b3;--quiet:#798e8e;--line:rgba(172,198,197,.17);--accent:#c7f578;--teal:#74bdb5;--mono:"Cascadia Code",Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:radial-gradient(ellipse at 90% 2%,#1c3227 0,transparent 33%),var(--bg);line-height:1.7}
+a{color:inherit;text-decoration:none}a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}a:hover{color:var(--accent)}
+.skip-link{position:absolute;top:-100px;left:20px;padding:10px 16px;background:var(--accent);color:var(--bg);z-index:10}.skip-link:focus{top:10px}
+.page{max-width:1190px;margin:auto;padding:0 38px}.mono,.eyebrow,.status,.tag,.back,.section-index,.slot-label,.footnote{font-family:var(--mono)}
+.topbar{min-height:88px;display:flex;justify-content:space-between;align-items:center;gap:20px;border-bottom:1px solid var(--line)}
+.brand{font-size:23px;font-weight:800;letter-spacing:-1.4px;white-space:nowrap}.brand b{color:var(--accent);margin:0 3px}
+.back{font-size:11px;color:var(--muted)}.back span{color:var(--accent);margin-right:10px}
+.hero{padding:76px 0 55px}.eyebrow{font-size:10px;letter-spacing:1.7px;color:var(--accent);text-transform:uppercase}
+h1{max-width:960px;font-size:clamp(40px,6.8vw,84px);font-weight:500;letter-spacing:-3.8px;line-height:1.06;margin:22px 0 19px}
+h1 em{color:var(--accent);font-style:normal}.subtitle{font-size:clamp(15px,2vw,21px);color:#c8d7d1;line-height:1.6;max-width:780px;margin:0 0 26px}
+.summary{max-width:830px;color:var(--muted);font-size:15px;line-height:1.9}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:11px;padding:10px 14px;border:1px solid #53664c;background:#1a2a20;color:#d8edbe}
+.status:before{content:"";height:7px;width:7px;background:var(--accent);border-radius:50%}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:48px 0 0}
+.stat{background:#101a1b;padding:20px 24px}.stat b{font-size:26px;line-height:1.4;font-weight:500;color:var(--accent)}.stat span{display:block;font:10px/1.7 var(--mono);color:var(--muted);margin-top:6px}
+.note{font-size:11px;color:var(--quiet);margin-top:12px}
+.diagram{position:relative;overflow:hidden;padding:34px;border:1px solid var(--line);background:linear-gradient(145deg,#111e1e,#0c1518);margin:35px 0 0}
+.diagram figcaption{font:10px var(--mono);color:var(--muted);margin:0 0 27px}.diagram figcaption strong{color:var(--accent);font-weight:500}
+.diagram-grid{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:16px;align-items:stretch}.component{border:1px solid #405047;padding:20px;min-height:150px;background:rgba(12,23,23,.75)}
+.component h3{font:14px var(--mono);margin:0 0 10px;color:#e8eeed}.component p{font-size:12px;color:var(--muted);margin:0}
+.cells{display:grid;gap:7px}.cells span{display:block;font:12px var(--mono);padding:6px 10px;background:rgba(199,245,120,.1);color:var(--accent);border:1px solid #49623d}
+.diagram-foot{margin-top:17px;font-size:11px;color:var(--quiet)}
+.toc{display:flex;flex-wrap:wrap;gap:10px;padding:28px 0 35px;border-bottom:1px solid var(--line)}
+.toc a{font:10px var(--mono);padding:9px 12px;border:1px solid var(--line);color:#b6c7c2}.toc a:hover{border-color:var(--accent)}
+section.case-section{display:grid;grid-template-columns:220px minmax(0,1fr);gap:45px;padding:62px 0;border-bottom:1px solid var(--line)}
+.section-label{position:sticky;top:26px;align-self:start}.section-index{font-size:10px;color:var(--accent)}.section-label h2{font-weight:500;line-height:1.2;font-size:27px;letter-spacing:-.8px;margin:12px 0}
+.section-body>p:first-child{margin-top:0}.section-body p{font-size:14px;line-height:1.9;color:var(--muted);max-width:750px}.section-body strong{color:#ecf5eb;font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin:22px 0}
+.panel{border:1px solid var(--line);background:rgba(18,31,30,.58);padding:21px}.panel h3{font-size:14px;font-weight:600;margin:0 0 8px}.panel p{font-size:12px;margin:0;color:var(--muted)}.panel small{color:var(--teal);font:9px var(--mono)}
+.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:25px}
+.media-slot{border:1px dashed #53675d;min-height:165px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;background:repeating-linear-gradient(135deg,#101b1b,#101b1b 12px,#122020 12px,#122020 13px);padding:17px;margin:0}
+.slot-label{font-size:10px;color:var(--accent);letter-spacing:.6px}.media-slot figcaption{font-size:12px;color:#c0d0c9;line-height:1.5}.media-slot small{display:block;font:10px/1.6 var(--mono);color:var(--quiet);margin-top:7px}
+.callout{padding:18px 20px;border-left:2px solid var(--teal);background:#132221;margin:25px 0;font:12px/1.8 var(--mono);color:#c1d2ce}
+.scenarios{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:24px 0}.scenario{border:1px solid var(--line);padding:19px 20px}.scenario b{font-size:13px;font-weight:600}.scenario p{font-size:12px;margin:6px 0 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.step{border-top:2px solid #54734d;padding-top:15px}.step span{font:10px var(--mono);color:var(--accent)}.step strong{display:block;margin:8px 0;font-size:13px}.step p{font-size:12px;margin:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0}.tag{font-size:10px;border:1px solid #45584d;padding:7px 10px;color:#cee0cf}
+.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:40px 0 60px;color:var(--quiet);font:10px var(--mono)}
+@media(max-width:860px){.diagram-grid{grid-template-columns:1fr}.component{min-height:0}.stats{grid-template-columns:repeat(2,1fr)}section.case-section{grid-template-columns:1fr;gap:15px;padding:42px 0}.section-label{position:static}.section-label h2{margin-bottom:5px}.media-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.page{padding:0 20px}.topbar{min-height:70px}.brand{font-size:19px}.back{font-size:9px}.hero{padding:49px 0 30px}h1{font-size:42px;letter-spacing:-2px}.summary{font-size:13px}.subtitle{font-size:16px}.stats{margin-top:32px}.stat{padding:15px}.stat b{font-size:23px}.stat span{font-size:8px}.diagram{padding:18px}.cols,.scenarios,.steps,.media-grid{grid-template-columns:1fr}.toc{gap:6px}.toc a{font-size:9px;padding:6px 8px}.footer{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#objective">Skip to case study</a>
+<div class="page">
+<header class="topbar"><a class="brand" href="/" aria-label="ME/SIGNAL portfolio">ME<b>/</b>SIGNAL</a><a class="back" href="/"><span>←</span> BACK TO PORTFOLIO</a></header>
+<main id="main">
+<header class="hero">
+<p class="eyebrow">Featured engineering project / Battery management</p>
+<h1>4S Lithium-Ion <em>Battery Management System</em></h1>
+<p class="subtitle">PCB design, battery simulation, and an interactive monitoring dashboard.</p>
+<p class="status">Design and simulation completed · Hardware implementation pending</p>
+<p class="summary">An academic engineering project combining an ESP32- and BQ76942-based board design, MATLAB/Simulink battery modeling, and a browser-based BMS Cockpit. The work studies four lithium-ion cell groups in series, condition monitoring, modeled protection, and passive cell balancing. The cockpit replays simulation exports—not live hardware data.</p>
+<div class="stats" aria-label="Project parameters"><div class="stat"><b>4S</b><span>FOUR SERIES CELL GROUPS</span></div><div class="stat"><b>16.8 V</b><span>MAXIMUM PACK VOLTAGE</span></div><div class="stat"><b>10 A</b><span>PCB DESIGN TARGET · NOT TESTED</span></div><div class="stat"><b>OFFLINE</b><span>SIMULATION DATA PLAYBACK</span></div></div>
+<p class="note">16.8 V is the maximum pack voltage at 4.2 V per series group. The 10 A figure is a design target, not a measured current capability.</p>
+<figure class="diagram" aria-label="Conceptual 4S BMS architecture"><figcaption><strong>SYSTEM MAP /</strong> Conceptual architecture — explanatory diagram, not a KiCad screenshot or fabricated hardware result</figcaption>
+<div class="diagram-grid">
+<div class="component"><h3>4S battery pack</h3><div class="cells"><span>GROUP 04</span><span>GROUP 03</span><span>GROUP 02</span><span>GROUP 01</span></div></div>
+<div class="component"><h3>BQ76942 / sensing &amp; protection design</h3><p>Group voltages · Temperature inputs · Current-sensing shunt · Passive balancing paths · Protection MOSFET stage</p></div>
+<div class="component"><h3>ESP32 / BMS Cockpit</h3><p>Controller included in PCB design. MATLAB/Simulink exports JSON for an independent browser dashboard. Live device communication is future work.</p></div>
+</div><div class="diagram-foot">Physical connections and embedded behavior must still be built and validated. The browser dashboard does not read the board.</div></figure>
+</header>
+<nav class="toc" aria-label="Case study sections"><a href="#objective">01 Objective</a><a href="#hardware">02 Hardware</a><a href="#simulation">03 Modeling</a><a href="#scenarios">04 Scenarios</a><a href="#cockpit">05 BMS Cockpit</a><a href="#skills">06 Skills &amp; status</a></nav>
+<section class="case-section" id="objective"><div class="section-label"><span class="section-index">01 / PURPOSE</span><h2>Objective</h2></div><div class="section-body"><p>Study how a battery management system monitors a series-connected lithium-ion pack, identifies abnormal operating conditions, and addresses imbalance between groups. The project connects three engineering layers: <strong>PCB design</strong>, <strong>dynamic simulation</strong>, and <strong>visual analysis of exported data</strong>.</p><div class="cols"><div class="panel"><h3>What the system studies</h3><p>Per-group voltage, current, temperature and state of charge, alongside passive balancing and protective fault behavior.</p></div><div class="panel"><h3>What is verified today</h3><p>A completed design-and-simulation workflow. There is no claim of assembled hardware, firmware operation or physical test performance.</p></div></div></div></section>
+<section class="case-section" id="hardware"><div class="section-label"><span class="section-index">02 / KICAD</span><h2>Hardware design</h2></div><div class="section-body"><p>A KiCad schematic, PCB layout and 3D board model were developed around the <strong>ESP32</strong> and <strong>BQ76942</strong>. The design addresses sensing, balancing, protection switching and power routing for a 4S, 16.8 V maximum pack.</p><div class="cols"><div class="panel"><h3>Sensing &amp; control</h3><p>Cell-group measurement connections, current-sensing shunt and temperature-sensing inputs; ESP32 and BQ76942 integration in the board design.</p></div><div class="panel"><h3>Power &amp; protection</h3><p>Protection MOSFETs and passive-balancing circuitry, with power-routing calculations oriented toward the 10 A design target.</p></div></div><div class="media-grid">
+<figure class="media-slot"><span class="slot-label">KICAD / 01</span><figcaption>Schematic capture<small>Original schematic image not supplied yet</small></figcaption></figure>
+<figure class="media-slot"><span class="slot-label">KICAD / 02</span><figcaption>PCB layout and routing<small>Original PCB layout image not supplied yet</small></figcaption></figure>
+<figure class="media-slot"><span class="slot-label">KICAD / 03</span><figcaption>3D board render<small>Original 3D render not supplied yet</small></figcaption></figure>
+</div><div class="callout">Engineering boundary: PCB layout and power-routing calculations are design work. Copper heating, connector limits, protection switching, measurement accuracy and current capability still require bench validation.</div></div></section>
+<section class="case-section" id="simulation"><div class="section-label"><span class="section-index">03 / MATLAB + SIMULINK</span><h2>Modeling &amp; simulation</h2></div><div class="section-body"><p>The MATLAB/Simulink model represents individual series-group voltages, state of charge and temperature, plus <strong>passive cell balancing</strong>. It also models latched responses to undervoltage, overvoltage, overcurrent and overtemperature conditions.</p><div class="cols"><div class="panel"><h3>Battery states</h3><p>Group voltage, SOC and temperature evolve with charging, discharging and unequal group conditions.</p></div><div class="panel"><h3>Protection logic</h3><p>Undervoltage (UV), overvoltage (OV), overcurrent (OC) and overtemperature (OT) are modeled with latched fault states.</p></div></div><p>The modeled protections are <strong>simulation behavior</strong>. They do not demonstrate implemented ESP32 firmware, configured BQ76942 protection thresholds, or physical actuation.</p></div></section>
+<section class="case-section" id="scenarios"><div class="section-label"><span class="section-index">04 / MODEL SCENARIOS</span><h2>Simulation scenarios</h2></div><div class="section-body"><p>The simulation explores six operating and fault scenarios. The labels below describe the engineering questions investigated; they are <strong>not measured acceptance results</strong>.</p><div class="scenarios">
+<div class="scenario"><b>Normal operation</b><p>Observe pack and group measurements during nominal modeled conditions.</p></div>
+<div class="scenario"><b>Discharge</b><p>Trace SOC and group voltages as modeled charge is depleted.</p></div>
+<div class="scenario"><b>Charging</b><p>Observe voltage and SOC evolution during simulated charging.</p></div>
+<div class="scenario"><b>Cell imbalance</b><p>Study unequal group states and the passive-balancing response.</p></div>
+<div class="scenario"><b>Overcurrent</b><p>Inspect current excursion and modeled latched protection state.</p></div>
+<div class="scenario"><b>Overtemperature</b><p>Inspect temperature excursion and modeled latched protection state.</p></div>
+</div><div class="media-grid">
+<figure class="media-slot"><span class="slot-label">PLOT / 01</span><figcaption>Group voltages and SOC<small>Original MATLAB/Simulink plot not supplied yet</small></figcaption></figure>
+<figure class="media-slot"><span class="slot-label">PLOT / 02</span><figcaption>Current and protection state<small>Original scenario plot not supplied yet</small></figcaption></figure>
+<figure class="media-slot"><span class="slot-label">PLOT / 03</span><figcaption>Temperature and fault latch<small>Original scenario plot not supplied yet</small></figcaption></figure>
+</div></div></section>
+<section class="case-section" id="cockpit"><div class="section-label"><span class="section-index">05 / BROWSER DASHBOARD</span><h2>BMS Cockpit</h2></div><div class="section-body"><p>A responsive <strong>HTML/CSS/JavaScript</strong> dashboard for exploring battery simulation output. It imports JSON exported from MATLAB, then replays simulation samples in the browser so engineering behavior can be inspected visually.</p>
+<div class="cols"><div class="panel"><h3>Import &amp; playback</h3><p>Load MATLAB JSON exports and play back simulation timelines.</p></div><div class="panel"><h3>Battery indicators</h3><p>Track simulated cell-group and pack information during replay.</p></div><div class="panel"><h3>Fault visualization</h3><p>Inspect modeled protection and warning states.</p></div><div class="panel"><h3>Charts &amp; capture</h3><p>Review trends with analysis charts and export a PNG capture.</p></div></div>
+<div class="media-grid"><figure class="media-slot"><span class="slot-label">DASHBOARD / 01</span><figcaption>Main BMS Cockpit view<small>Original dashboard screenshot not supplied yet</small></figcaption></figure><figure class="media-slot"><span class="slot-label">DASHBOARD / 02</span><figcaption>Playback and analysis charts<small>Original dashboard screenshot not supplied yet</small></figcaption></figure><figure class="media-slot"><span class="slot-label">DASHBOARD / 03</span><figcaption>Fault visualization<small>Original dashboard screenshot not supplied yet</small></figcaption></figure></div>
+<div class="callout">Data provenance: dashboard values come from simulation JSON exports. There is no live ESP32 communication, live sensor acquisition or connected physical BMS at this stage.</div></div></section>
+<section class="case-section" id="skills"><div class="section-label"><span class="section-index">06 / ENGINEERING PRACTICE</span><h2>Skills &amp; status</h2></div><div class="section-body"><p>The project connects <strong>PCB design</strong>, <strong>battery modeling</strong>, <strong>fault-state logic</strong>, <strong>scenario-based verification</strong>, <strong>data visualization</strong> and <strong>technical documentation</strong>.</p>
+<div class="steps"><div class="step"><span>COMPLETE / 01</span><strong>Electronic design</strong><p>KiCad schematic, PCB layout and 3D design, with a 10 A routing target.</p></div><div class="step"><span>COMPLETE / 02</span><strong>Simulation</strong><p>Battery state model, balancing and latched protection scenarios.</p></div><div class="step"><span>COMPLETE / 03</span><strong>Offline visualization</strong><p>Responsive cockpit for JSON import, simulation playback and chart capture.</p></div></div>
+<div class="callout">Current status: <strong>design and simulation completed; hardware implementation pending.</strong> Next steps are physical PCB assembly, embedded firmware, live ESP32 communication and hardware testing. No hardware-test results, current-handling verification or product certification are claimed.</div>
+<div class="tags" aria-label="Technologies"><span class="tag">ESP32</span><span class="tag">BQ76942</span><span class="tag">KiCad</span><span class="tag">MATLAB</span><span class="tag">Simulink</span><span class="tag">JavaScript</span><span class="tag">HTML/CSS</span></div>
+<p class="note">Repository, runnable demo, engineering report and original project image links will only be added when actual links or files are supplied.</p></div></section>
+</main>
+<footer class="footer"><span>ME/SIGNAL · ENGINEERING CASE STUDY</span><a href="/">← RETURN TO PORTFOLIO</a></footer>
+</div>
+</body></html>
